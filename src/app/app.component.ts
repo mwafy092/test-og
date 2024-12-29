@@ -63,12 +63,10 @@ export class AppComponent {
 
   handleFaceBookSharing = () => {
     window.FB.api(
-      'https://graph.facebook.com/',
+      'https://graph.facebook.com?id=' +
+        'https://hesham99.netlify.app' +
+        '&scrape=true',
       'post',
-      {
-        id: 'https://hesham99.netlify.app/?prod=12',
-        scrape: true,
-      },
       function (response) {
         console.log('rescrape', response);
         window.FB.ui(
