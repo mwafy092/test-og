@@ -62,6 +62,21 @@ export class AppComponent {
   };
 
   handleFaceBookSharing = () => {
+    const urlToScrape = 'https://hesham99.netlify.app/'; // Replace with the URL you want to rescrape
+
+    // Facebook Sharing Debugger API URL
+    const debuggerUrl = `https://graph.facebook.com/?id=${encodeURIComponent(
+      urlToScrape
+    )}`;
+
+    fetch(debuggerUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Scraping result:', data);
+      })
+      .catch((error) => {
+        console.error('Error scraping URL:', error);
+      });
     window.FB.api(
       'https://graph.facebook.com?id=' +
         'https://hesham99.netlify.app' +
