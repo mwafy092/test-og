@@ -50,6 +50,17 @@ export class AppComponent {
     metaTagImg.setAttribute('content', data.thumbnail);
 
     metaTag.content = data.description;
+
+    let metaTagTitle: any = document.querySelector('meta[property="og:title"]');
+    if (!metaTagTitle) {
+      metaTagTitle = document.createElement('meta');
+      metaTagTitle.setAttribute('property', 'og:image');
+      document.head.appendChild(metaTagTitle);
+    }
+
+    metaTagTitle.setAttribute('content', data.title);
+
+    metaTagTitle.content = data.description;
   };
 
   handleFaceBookSharing = () => {
