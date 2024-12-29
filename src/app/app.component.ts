@@ -70,20 +70,19 @@ export class AppComponent {
         scrape: true,
       },
       function (response) {
-        console.log('rescrapped');
-      }
-    );
-    window.FB.ui(
-      {
-        method: 'share',
-        href: 'https://hesham99.netlify.app/', // The URL to share
-      },
-      function (response) {
-        if (response && !response.error_message) {
-          alert('Post shared successfully!');
-        } else {
-          alert('Error while sharing.');
-        }
+        window.FB.ui(
+          {
+            method: 'share',
+            href: 'https://hesham99.netlify.app/', // The URL to share
+          },
+          function (response) {
+            if (response && !response.error_message) {
+              alert('Post shared successfully!');
+            } else {
+              alert('Error while sharing.');
+            }
+          }
+        );
       }
     );
   };
