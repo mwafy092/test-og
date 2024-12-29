@@ -73,6 +73,7 @@ export class AppComponent {
         href: 'https://hesham99.netlify.app/', // The URL to share
       },
       function (response) {
+        console.log(response);
         if (response && !response.error_message) {
           alert('Post shared successfully!');
         } else {
