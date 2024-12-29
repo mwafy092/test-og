@@ -25,6 +25,7 @@ export class AppComponent {
     this.http.get(this.uri).subscribe((res: any) => {
       this.productData = res?.products[0];
       this.handleMetadata(res?.products[0]);
+      this.initFacebook();
     });
   };
 
@@ -77,5 +78,27 @@ export class AppComponent {
         }
       }
     );
+  };
+
+  initFacebook = () => {
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: '1258582682037170',
+        xfbml: true,
+        version: 'v16.0', // Use the latest version
+      });
+    };
+
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'facebook-jssdk');
   };
 }
