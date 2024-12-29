@@ -60,7 +60,7 @@ export class AppComponent {
 
     metaTagTitle.setAttribute('content', data.title);
 
-    metaTagTitle.content = data.description;
+    metaTagTitle.content = data.title;
   };
 
   handleFaceBookSharing = () => {
