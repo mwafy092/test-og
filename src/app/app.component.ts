@@ -24,9 +24,10 @@ export class AppComponent {
   handleGetData = () => {
     this.http.get(this.uri).subscribe((res: any) => {
       this.productData = res?.products[0];
-      console.log(this.productData);
       this.handleMetadata(res?.products[0]);
-      this.handleInitFB();
+      setTimeout(() => {
+        this.handleInitFB();
+      }, 2000);
     });
   };
 
