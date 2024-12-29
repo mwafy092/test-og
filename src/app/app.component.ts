@@ -69,7 +69,9 @@ export class AppComponent {
         id: 'https://hesham99.netlify.app/',
         scrape: true,
       },
-      function (response) {}
+      function (response) {
+        console.log('rescrapped');
+      }
     );
     window.FB.ui(
       {
