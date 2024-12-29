@@ -70,6 +70,7 @@ export class AppComponent {
         scrape: true,
       },
       function (response) {
+        console.log('rescrape', response);
         window.FB.ui(
           {
             method: 'share',
