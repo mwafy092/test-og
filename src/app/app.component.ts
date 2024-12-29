@@ -30,7 +30,6 @@ export class AppComponent {
   };
 
   handleMetadata = (data: any) => {
-    console.log(window?.FB);
     document.title = data.title;
     let metaTag: any = document.querySelector('meta[name="description"]');
 
@@ -63,6 +62,15 @@ export class AppComponent {
   };
 
   handleFaceBookSharing = () => {
+    window.FB.api(
+      'https://graph.facebook.com/',
+      'post',
+      {
+        id: 'https://hesham99.netlify.app/',
+        scrape: true,
+      },
+      function (response) {}
+    );
     window.FB.ui(
       {
         method: 'share',
@@ -78,8 +86,8 @@ export class AppComponent {
     );
   };
 
-  initFacebook = () => {
-    window.fbAsyncInit = function () {
+  initFacebook = async () => {
+    window.fbAsyncInit = await function () {
       window.FB.init({
         appId: '1258582682037170',
         xfbml: true,
