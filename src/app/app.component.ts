@@ -66,7 +66,7 @@ export class AppComponent {
       'https://graph.facebook.com/',
       'post',
       {
-        id: 'https://hesham99.netlify.app/',
+        id: 'https://hesham99.netlify.app/?prod=12',
         scrape: true,
       },
       function (response) {
