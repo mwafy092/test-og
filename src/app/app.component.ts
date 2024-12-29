@@ -62,30 +62,28 @@ export class AppComponent {
   };
 
   handleFaceBookSharing = () => {
-    window.FB.Event.subscribe('xfbml.render', function () {
-      window.FB.api(
-        'https://graph.facebook.com?id=' +
-          'https://hesham99.netlify.app' +
-          '&scrape=true',
-        'post',
-        function (response) {
-          console.log('rescrape', response);
-          window.FB.ui(
-            {
-              method: 'share',
-              href: 'https://hesham99.netlify.app/', // The URL to share
-            },
-            function (response) {
-              if (response && !response.error_message) {
-                alert('Post shared successfully!');
-              } else {
-                alert('Error while sharing.');
-              }
+    window.FB.api(
+      'https://graph.facebook.com?id=' +
+        'https://hesham99.netlify.app' +
+        '&scrape=true',
+      'post',
+      function (response) {
+        console.log('rescrape', response);
+        window.FB.ui(
+          {
+            method: 'share',
+            href: 'https://hesham99.netlify.app/', // The URL to share
+          },
+          function (response) {
+            if (response && !response.error_message) {
+              alert('Post shared successfully!');
+            } else {
+              alert('Error while sharing.');
             }
-          );
-        }
-      );
-    });
+          }
+        );
+      }
+    );
   };
 
   initFacebook = async () => {
