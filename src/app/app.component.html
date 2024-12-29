@@ -1,6 +1,4 @@
-<div class="product">
-  <h1>{{productData.title}}</h1>
-  <p>{{productData.description}}</p>
-  <img src={{productData.thumbnail}} />
-  <button (click)="handleFaceBookSharing()">Share on facebook</button>
+<div>
+  <a [routerLink]="['/prod']" routerLinkActive="router-link-active">Product</a>
+  <router-outlet></router-outlet>
 </div>
