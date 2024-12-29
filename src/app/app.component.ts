@@ -50,12 +50,10 @@ export class AppComponent {
 
     metaTagImg.setAttribute('content', data.thumbnail);
 
-    metaTag.content = data.description;
-
     let metaTagTitle: any = document.querySelector('meta[property="og:title"]');
     if (!metaTagTitle) {
       metaTagTitle = document.createElement('meta');
-      metaTagTitle.setAttribute('property', 'og:image');
+      metaTagTitle.setAttribute('property', 'og:title');
       document.head.appendChild(metaTagTitle);
     }
 
@@ -81,6 +79,16 @@ export class AppComponent {
   };
 
   initFacebook = () => {
+    let metaTagTitle: any = document.querySelector('meta[property="og:title"]');
+    if (!metaTagTitle) {
+      metaTagTitle = document.createElement('meta');
+      metaTagTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(metaTagTitle);
+    }
+
+    metaTagTitle.setAttribute('content', 'nice');
+
+    metaTagTitle.content = 'nice';
     window.fbAsyncInit = function () {
       window.FB.init({
         appId: '1258582682037170',
