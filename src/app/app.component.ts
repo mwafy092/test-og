@@ -62,7 +62,7 @@ export class AppComponent {
   };
 
   handleFaceBookSharing = () => {
-    window.FB.Event.subscribe('auth.authResponseChange', function () {
+    window.FB.Event.subscribe('xfbml.render', function () {
       window.FB.api(
         'https://graph.facebook.com?id=' +
           'https://hesham99.netlify.app' +
