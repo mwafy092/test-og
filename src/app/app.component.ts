@@ -25,7 +25,7 @@ export class AppComponent {
     this.http.get(this.uri).subscribe((res: any) => {
       this.productData = res?.products[0];
       this.handleMetadata(res?.products[0]);
-      // this.initFacebook();
+      this.initFacebook();
     });
   };
 
@@ -79,16 +79,6 @@ export class AppComponent {
   };
 
   initFacebook = () => {
-    let metaTagTitle: any = document.querySelector('meta[property="og:title"]');
-    if (!metaTagTitle) {
-      metaTagTitle = document.createElement('meta');
-      metaTagTitle.setAttribute('property', 'og:title');
-      document.head.appendChild(metaTagTitle);
-    }
-
-    metaTagTitle.setAttribute('content', 'nice');
-
-    metaTagTitle.content = 'nice';
     window.fbAsyncInit = function () {
       window.FB.init({
         appId: '1258582682037170',
