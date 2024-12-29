@@ -17,7 +17,7 @@ export class ProdBoxComponent {
     });
   }
   handleFaceBookSharing = () => {
-    const urlToScrape = 'https://hesham99.netlify.app/'; // Replace with the URL you want to rescrape
+    const urlToScrape = 'https://hesham99.netlify.app/prod'; // Replace with the URL you want to rescrape
 
     // Facebook Sharing Debugger API URL
     const debuggerUrl = `https://graph.facebook.com/?id=${encodeURIComponent(
@@ -34,7 +34,7 @@ export class ProdBoxComponent {
       });
     window.FB.api(
       'https://graph.facebook.com?id=' +
-        'https://hesham99.netlify.app' +
+        'https://hesham99.netlify.app/prod' +
         '&scrape=true',
       'post',
       function (response) {
@@ -42,7 +42,7 @@ export class ProdBoxComponent {
         window.FB.ui(
           {
             method: 'share',
-            href: 'https://hesham99.netlify.app/', // The URL to share
+            href: 'https://hesham99.netlify.app/prod', // The URL to share
           },
           function (response) {
             if (response && !response.error_message) {
